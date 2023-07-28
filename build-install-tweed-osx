@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -exuo pipefail
+
+cp ./plugins/tweed/res/* /tmp/
+
+cargo xtask bundle tweed --release
+
+VST_FOLDER=${HOME}/Library/Audio/Plug-Ins/VST/
+mkdir -p ${VST_FOLDER}
+cp -r target/bundled/tweed.vst3 ${VST_FOLDER}
+
+CLAP_FOLDER=${HOME}/Library/Audio/Plug-Ins/CLAP
+mkdir -p ${CLAP_FOLDER}
+cp -r target/bundled/tweed.clap ${CLAP_FOLDER}
