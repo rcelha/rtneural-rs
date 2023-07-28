@@ -1,0 +1,3 @@
+[submodule "vendor/RTNeural"]
+	path = vendor/RTNeural
+	url = git@github.com:jatinchowdhury18/RTNeural.git
