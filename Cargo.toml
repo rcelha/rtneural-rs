@@ -2,7 +2,10 @@
 name = "rtneural-rs"
 version = "0.1.0"
 edition = "2021"
-crate-type = ["staticlib"]
+# crate-type = ["staticlib"]
+
+[workspace]
+members = ["plugins/xtask", "plugins/tweed"]
 
 [dependencies]
 autocxx = "0.26.0"

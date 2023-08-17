@@ -1,0 +1,15 @@
+[package]
+name = "tweed"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+include_dir = "0.7.3"
+nih_plug = { git = "https://github.com/robbert-vdh/nih-plug", features = [
+  "standalone",
+] }
+nih_plug_vizia = { git = "https://github.com/robbert-vdh/nih-plug" }
+rtneural-rs = { path = "../../" }

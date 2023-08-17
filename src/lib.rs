@@ -29,6 +29,10 @@ impl Model {
     }
 }
 
+// TODO remove this and relly on auto impl
+unsafe impl Send for Model {}
+unsafe impl Sync for Model {}
+
 #[cfg(test)]
 mod test {
     #[test]
@@ -39,5 +43,11 @@ mod test {
             let output = model.forward(&[i, i, i]);
             assert_eq!(output.len(), 1);
         }
+    }
+
+    #[test]
+    fn test_send_sync() {
+        fn is_send_sync<T: Send + Sync>() {}
+        is_send_sync::<super::Model>();
     }
 }

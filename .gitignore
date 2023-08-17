@@ -1,2 +1,4 @@
 /target/
 Cargo.lock
+plugins/tweed/target/
+plugins/xtask/target/
